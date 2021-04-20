@@ -16,13 +16,17 @@
         app:srlEnableLoadMore="true"
         app:srlEnableAutoLoadMore="false"
         app:srlEnableFooterTranslationContent="true"
+        android:overScrollMode="never"
         >
         <!--RecyclerView的列表-->
         <!--AndroidX要使用：app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"才行-->
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_view"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent"
+            android:overScrollMode="never"
+
+            />
 
         <com.scwang.smartrefresh.layout.footer.ClassicsFooter
             android:layout_width="match_parent"

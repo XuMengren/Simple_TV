@@ -13,6 +13,8 @@
         android:layout_height="match_parent"
         android:background="@color/recycler_bg"
         android:layout_marginTop="@dimen/heightFromTopOfScreen"
+        android:overScrollMode="never"
+
         >
 
         <com.google.android.material.appbar.AppBarLayout
@@ -39,6 +41,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="50dp"
                     android:background="@color/recycler_bg"
+                    android:overScrollMode="never"
+
                     />
 
                 <androidx.appcompat.widget.Toolbar
