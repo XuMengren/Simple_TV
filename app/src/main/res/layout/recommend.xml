@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/recycler_bg"
+    >
+    <LinearLayout
+        android:id="@+id/recommend"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        >
+        <TextView
+            android:id="@+id/recommend_txt"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/recommend"
+            android:textSize="@dimen/recommend_title"
+            android:layout_margin="@dimen/title_margin"
+            android:textColor="@color/black"
+            />
+        <TextView
+            android:id="@+id/txt"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/more"
+            android:gravity="right"
+            android:textSize="@dimen/more_size"
+            android:textColor="@color/movie_name"
+            />
+
+        <ImageView
+            android:id="@+id/pic"
+            android:layout_width="@dimen/more_img_width"
+            android:layout_height="@dimen/more_img_height"
+            android:background="@drawable/more"
+            />
+    </LinearLayout>
+
+</LinearLayout>

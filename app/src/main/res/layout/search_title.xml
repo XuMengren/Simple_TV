@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="@dimen/title_margin"
+    android:id="@+id/search_history_title"
+    android:gravity="center_vertical"
+    >
+
+    <TextView
+        android:layout_weight="1"
+        android:id="@+id/search_txt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/test_name"
+        android:textSize="@dimen/recommend_title"
+        android:textColor="@color/black"
+        />
+
+    <ImageView
+        android:id="@+id/clearall"
+        android:layout_width="@dimen/delete_all_history_wh"
+        android:layout_height="@dimen/delete_all_history_wh"
+        android:background="@drawable/delete"
+        android:scaleType="fitXY"
+        />
+</LinearLayout>

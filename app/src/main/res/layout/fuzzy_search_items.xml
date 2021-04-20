@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/margin"
+    android:id="@+id/fuzzy_search_view"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:layout_width="@dimen/searchView_item"
+        android:layout_height="@dimen/searchView_item"
+        android:layout_weight="1"
+        android:background="@drawable/fuzzy_search"
+        android:scaleType="fitXY" />
+
+    <TextView
+        android:id="@+id/fuzzy_search_text"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/searchView_item"
+        android:layout_weight="10"
+        android:text="@string/test_name"
+        android:textSize="@dimen/movie_name_size"
+        android:padding="@dimen/title_margin"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:maxEms="14"
+        android:singleLine="true"
+        android:layout_marginLeft="@dimen/title_margin"
+        />
+</LinearLayout>

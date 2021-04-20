@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/recycler_bg"
+    android:orientation="vertical"
+    tools:context="com.example.simpletv.Activity.PlayerActivity">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <cn.jzvd.JzvdStd
+            android:id="@+id/video_player"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:transitionName="image"
+            tools:ignore="UnusedAttribute" />
+
+        <ImageView
+            android:id="@+id/cancel_video"
+            android:layout_width="@dimen/title_img_width_height"
+            android:layout_height="@dimen/title_img_width_height"
+            android:layout_margin="12dp"
+            android:background="@drawable/cancel_white"
+            android:scaleType="fitXY" />
+    </FrameLayout>
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/recycler_bg"
+        android:overScrollMode="never"
+        app:srlEnableLoadMore="false"
+        app:srlEnableOverScrollBounce="true"
+        app:srlEnableOverScrollDrag="true"
+        app:srlEnableRefresh="false">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/video_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/recycler_bg"
+            android:overScrollMode="never" />
+
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+
+</LinearLayout>

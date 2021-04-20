@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/title_margin"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/hot_search_click"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        >
+
+        <TextView
+            android:id="@+id/hot_search_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/hot_search"
+            android:textColor="@color/black"
+            android:textSize="@dimen/recommend_title" />
+
+        <ImageView
+            android:layout_width="@dimen/hot_img_width"
+            android:layout_height="@dimen/hot_img_height"
+            android:background="@drawable/hotsearch_icon"
+            />
+        <LinearLayout
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            >
+            <ImageView
+                android:id="@+id/show"
+                android:layout_width="@dimen/delete_all_history_wh"
+                android:layout_height="@dimen/delete_all_history_wh"
+                android:background="@drawable/show"
+                android:scaleType="fitXY" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/hint_txt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/hint_txt"
+        android:gravity="center"
+        android:textSize="16dp"
+        android:textColor="@color/hot_search_hide"
+        android:layout_marginTop="@dimen/hot_search_hint_margintop"
+        android:visibility="gone"
+        />
+
+</LinearLayout>

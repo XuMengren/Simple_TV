@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="@drawable/shape"
+    >
+
+    <TextView
+        android:id="@+id/history_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/history_txt"
+        android:textSize="@dimen/movie_name_size"
+        android:textColor="@color/movie_name"
+        android:text="@string/test_name"
+        android:singleLine="true"
+        android:ellipsize="end"
+        android:maxEms="14"
+        android:padding="@dimen/margin"
+        />
+
+    <LinearLayout
+        android:layout_width="@dimen/history_del"
+        android:layout_height="@dimen/history_del"
+        android:layout_marginTop="@dimen/flowlayout_item_margin"
+        android:layout_marginRight="@dimen/margin"
+        >
+
+        <ImageView
+            android:id="@+id/history_del"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:background="@drawable/x"
+            />
+    </LinearLayout>
+
+
+</LinearLayout>

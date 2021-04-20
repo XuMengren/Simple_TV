@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+        <!-- 文字选中时的背景-->
+        <item android:state_focused="true" android:color="#DB251F"/>
+        <!-- 文字单击时的背景 -->
+        <item android:state_pressed="true" android:color="#DB251F"/>
+        <item android:state_checked="true" android:color="#DB251F"/>
+        <item android:state_selected="true" android:color="#DB251F"/>
+        <!-- 文字默认的背景 -->
+        <item android:color="#969696"/>
+</selector>
+

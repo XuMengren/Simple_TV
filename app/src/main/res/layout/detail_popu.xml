@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/recycler_bg"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/margin"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="简介"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            />
+
+        <ImageView
+            android:id="@+id/popu_finish"
+            android:layout_width="@dimen/title_img_width_height"
+            android:layout_height="@dimen/title_img_width_height"
+            android:background="@drawable/x_black"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="@dimen/margin"
+            tools:ignore="RtlHardcoded" />
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never"
+        android:scrollbars="none"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    tools:ignore="InefficientWeight">
+                    <TextView
+                        android:id="@+id/movie_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="剧名:"
+                        android:textSize="@dimen/movie_name_size"
+                        android:textColor="@color/movie_name"
+                        android:padding="@dimen/margin"
+                        android:maxEms="22"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        />
+                    <TextView
+                        android:id="@+id/movie_region"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="地区:"
+                        android:textSize="@dimen/movie_name_size"
+                        android:textColor="@color/movie_name"
+                        android:padding="@dimen/margin"
+                        android:maxEms="22"
+                        android:ellipsize="end"
+
+                        />
+                    <TextView
+                        android:id="@+id/movie_year"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="年份:"
+                        android:textSize="@dimen/movie_name_size"
+                        android:textColor="@color/movie_name"
+                        android:padding="@dimen/margin"
+                        android:maxEms="22"
+                        android:ellipsize="end"
+
+                        />
+                    <TextView
+                        android:id="@+id/movie_yuyan"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="语言:"
+                        android:textSize="@dimen/movie_name_size"
+                        android:textColor="@color/movie_name"
+                        android:padding="@dimen/margin"
+                        android:maxEms="22"
+                        android:ellipsize="end"
+
+                        />
+                    <TextView
+                        android:id="@+id/movie_author"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="导演:"
+                        android:textSize="@dimen/movie_name_size"
+                        android:textColor="@color/movie_name"
+                        android:padding="@dimen/margin"
+                        android:maxEms="22"
+
+                        />
+                    <TextView
+                        android:id="@+id/movie_yanyuan"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="演员:"
+                        android:textSize="@dimen/movie_name_size"
+                        android:textColor="@color/movie_name"
+                        android:padding="@dimen/margin"
+                        android:maxEms="22"
+                        android:ellipsize="end"
+
+                        />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/title_margin"
+                    >
+                    <com.example.simpletv.Tools.RoundImageView
+                        android:id="@+id/movie_img"
+                        android:layout_width="@dimen/movie_width"
+                        android:layout_height="@dimen/movie_height"
+                        android:background="@drawable/picture_loading"
+                        android:scaleType="fitXY"
+                        />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/movieIntroduction"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="@dimen/margin"
+                android:text="\u3000\u30001898年年，银矿⼯工丹丹尼尔普莱恩惟尤(丹丹尼尔戴刘易易斯 Daniel Day Lewis 饰)因井 下作业事故摔断了了腿，但他因祸得福了了解到秘密的⽯石油信息。他利利⽤用失聪孩童HW(狄⻰龙弗雷雷泽尔 Dillon Freasier 饰)欺骗乡⺠民赢得了了⽯石油地盘，从此⻜飞⻩黄腾达。但是，成为 ⽯石油⼤大亨的他并不不快乐， HW对他 的怨恨与⽇日俱增，他唯⼀一认亲的兄弟居然也是冒牌货。传教⼠士伊莱桑迪不不过是个借宗教蛊惑⼈人⼼心的⼩小⼈人。在 ⼀一次采矿事故中，丹丹尼尔的⼯工⼈人不不幸丧⽣生。正当他希望伊莱(保罗达诺 Paul Dano 饰)施以援⼿手时，对 ⽅方羞辱了了他，两⼈人从此开始明争暗⽃斗...... 本⽚片根据⼩小说《⽯石油》改编，导演保罗托⻢马斯安德森凭借此⽚片摘得 第58届柏林林电影节最佳导演银熊奖。丹丹尼尔戴刘易易斯摘得第80届奥斯卡⾦金金像奖影帝桂冠"
+                android:textColor="@color/black" />
+        </LinearLayout>
+    </ScrollView>
+
+
+<!--    </com.scwang.smartrefresh.layout.SmartRefreshLayout>-->
+</LinearLayout>

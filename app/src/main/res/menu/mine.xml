@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/loading"
+        android:icon="@drawable/loading"
+        android:title="@string/loading"
+        />
+    <item android:id="@+id/watch_history"
+        android:icon="@drawable/watch_history"
+        android:title="@string/watch_history"
+        />
+    <item android:id="@+id/zhuiju"
+        android:icon="@drawable/binge_watching"
+        android:title="@string/zhuiju"
+        />
+    <item android:id="@+id/shoucang"
+        android:icon="@drawable/collection"
+        android:title="@string/shoucang"
+        />
+</menu>

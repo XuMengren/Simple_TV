@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/recycler_bg"
+    android:orientation="vertical"
+    >
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/main_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/recycler_bg"
+        android:layout_marginTop="@dimen/heightFromTopOfScreen"
+        >
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:elevation="0dp"
+            android:background="@color/recycler_bg"
+            app:layout_scrollFlags="scroll|snap">
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:id="@+id/collapsing_toolbar_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:contentScrim="@color/recycler_bg"
+                android:background="@color/recycler_bg"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed|enterAlwaysCollapsed|snap"
+                android:minHeight="20dp"
+                >
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/fenlei_recTop"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="50dp"
+                    android:background="@color/recycler_bg"
+                    />
+
+                <androidx.appcompat.widget.Toolbar
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:background="@color/recycler_bg"
+                    app:contentInsetStart="0dp"
+                    app:layout_collapseMode="pin">
+
+                    <include layout="@layout/movie_part_title" />
+
+                </androidx.appcompat.widget.Toolbar>
+
+
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/hint_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                app:layout_scrollFlags="scroll|enterAlways"
+                app:contentInsetStart="0dp"
+                app:layout_collapseMode="pin"
+                >
+
+                <include layout="@layout/movie_part_hint" />
+            </androidx.appcompat.widget.Toolbar>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <!--包含可滑动的布局内容(RecyclerView,NestedScrollView,不支持ListView，ScrollView)
+        必须要设置app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        属性来告知CoordinatorLayout该组件是带有滑动行为的组件,
+        然后CoordinatorLayout在接受到滑动时会通知AppBarLayout中可滑动的Toolbar可以滑出屏幕-->
+        <include layout="@layout/content_scrolling" />
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+</LinearLayout>

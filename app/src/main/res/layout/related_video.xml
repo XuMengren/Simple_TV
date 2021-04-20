@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="@dimen/margin"
+    android:background="@color/recycler_bg"
+    >
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/same_video"
+        android:textSize="@dimen/video_title_textsize"
+        android:textColor="@color/black"
+        android:padding="@dimen/margin"
+        />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/same_video_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:overScrollMode="never"
+        />
+</LinearLayout>

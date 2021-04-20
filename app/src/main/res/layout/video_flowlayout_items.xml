@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/history_txt"
+    android:layout_width="wrap_content"
+    android:layout_height="@dimen/history_txt"
+    android:background="@drawable/flow_selector"
+    android:ellipsize="end"
+    android:maxEms="22"
+    android:padding="@dimen/margin"
+    android:singleLine="true"
+    android:text="@string/test_name"
+    android:textColor="@color/movie_name"
+    android:textSize="@dimen/movie_name_size" />

@@ -1,0 +1,94 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.3"
+
+    defaultConfig {
+        applicationId "com.example.simpletv"
+        minSdkVersion 14
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.2'
+    implementation 'com.google.android.material:material:1.0.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    implementation 'com.google.code.gson:gson:2.8.6'//gson解析
+
+    implementation 'com.squareup.okhttp3:okhttp:3.12.1'
+    implementation 'com.zhy:okhttputils:2.6.2'
+    debugImplementation 'com.squareup.okhttp3:logging-interceptor:3.12.1'//Okhttp框架
+
+    implementation 'com.youth.banner:banner:1.4.10'//轮播
+
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'//Glide图片加载
+
+    implementation 'com.squareup.picasso:picasso:2.5.2'//picasso图片加载
+
+
+    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-14'//刷新
+
+    implementation 'com.hyman:flowlayout-lib:1.1.2'//流式布局
+
+    def room_version = "2.2.3"
+    implementation "androidx.room:room-runtime:$room_version"
+    annotationProcessor "androidx.room:room-compiler:$room_version"
+    // For Kotlin use kapt instead of annotationProcessor
+
+    // optional - Kotlin Extensions and Coroutines support for Room
+    implementation "androidx.room:room-ktx:$room_version"
+
+    // optional - RxJava support for Room
+    implementation "androidx.room:room-rxjava2:$room_version"
+
+    // optional - Guava support for Room, including Optional and ListenableFuture
+    implementation "androidx.room:room-guava:$room_version"
+
+    // Test helpers
+    testImplementation "androidx.room:room-testing:$room_version"//Room数据库
+
+    //圆形图片库
+    implementation 'com.makeramen:roundedimageview:2.3.0'
+
+    //MD风格登录样式
+//    implementation 'com.github.shem8:material-login:2.2.0'
+    //城市选择器
+    implementation 'liji.library.dev:citypickerview:3.1.8'
+
+    //pickerView
+    implementation 'com.contrarywind:Android-PickerView:4.1.3'
+    //wheel view
+    implementation 'com.contrarywind:wheelview:4.1.0'
+
+    //播放器框架
+    implementation 'cn.jzvd:jiaozivideoplayer:7.4.2'
+
+    //测滑删除RecyclerView
+    implementation 'com.yanzhenjie:recyclerview-swipe:1.1.4'
+
+    implementation 'gdut.bsx:share2:0.9.3'
+}

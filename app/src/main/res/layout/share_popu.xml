@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="120dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="8sp"
+    android:elevation="10sp"
+    android:orientation="vertical"
+    tools:ignore="UnusedAttribute">
+
+    <LinearLayout
+        android:background="@drawable/popu_shape"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="15sp">
+
+        <RadioButton
+            android:id="@+id/main_qq"
+            style="@style/AppTheme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="30sp"
+            android:button="@null"
+            android:drawableTop="@mipmap/qq"
+            android:gravity="center"
+            android:text="@string/qq"
+            android:textSize="13sp" />
+
+        <RadioButton
+            android:id="@+id/main_wchart"
+            style="@style/AppTheme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30sp"
+            android:button="@null"
+            android:drawableTop="@mipmap/weixin"
+            android:gravity="center"
+            android:text="@string/wechat"
+            android:textSize="13sp" />
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

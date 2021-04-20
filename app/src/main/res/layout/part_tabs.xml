@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/part_tabs"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        app:tabIndicatorHeight="0dp"
+        app:tabSelectedTextColor="@color/nav_bg"
+        app:tabBackground="@android:color/transparent"
+        app:tabRippleColor="@android:color/transparent"
+        app:tabMode="scrollable"
+        />
+</LinearLayout>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/fengxiang"
+        android:icon="@drawable/fenxiang"
+        android:title="@string/fenxiang"
+        />
+    <item android:id="@+id/contact"
+        android:icon="@drawable/lianxi"
+        android:title="@string/contact"
+        />
+    <item android:id="@+id/version"
+        android:icon="@drawable/xinxi"
+        android:title="@string/versionInformation"
+        />
+    <item android:id="@+id/setport"
+        android:icon="@drawable/port"
+        android:title="@string/setport"
+        />
+</menu>

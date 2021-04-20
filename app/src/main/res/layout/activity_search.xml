@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Activity.SearchActivity"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/heightFromTopOfScreen"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/search_height"
+        android:layout_margin="@dimen/margin"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="@dimen/search_exit_img_width"
+            android:layout_height="@dimen/search_exit_img_height"
+            android:layout_weight="1"
+            android:background="@drawable/exit" />
+
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/search_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/fillet_model"
+            app:queryHint="@string/query_hint"
+            />
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/fuzzySearch"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@color/white"
+        android:visibility="gone" />
+
+    <include layout="@layout/search_title" />
+
+    <com.zhy.view.flowlayout.TagFlowLayout
+        android:id="@+id/search_history"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:max_select="1" />
+
+    <include layout="@layout/hot_search_title" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:id="@+id/hot_search_ll"
+        >
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/hotsearch_tab"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/tab_height"
+            app:tabIndicatorHeight="0dp"
+            app:tabSelectedTextColor="@color/font"
+            app:tabBackground="@android:color/transparent"
+            app:tabRippleColor="@android:color/transparent"
+            app:tabMode="scrollable"
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginTop="@dimen/margin"
+            android:background="@color/line_color"
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_hot_search"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+</LinearLayout>

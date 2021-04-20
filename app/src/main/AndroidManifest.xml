@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.simpletv">
+
+    <uses-sdk tools:overrideLibrary="cn.jzvd" />
+    <!-- 网络请求权限 -->
+    <uses-permission android:name="android.permission.INTERNET" /> <!-- 我们编写判断用户是否联网的代码，必须在当前module的清单文件中添加判断用户的网络状态权限 -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <meta-data
+        android:name="com.bumptech.glide.integration.okhttp3.OkHttpGlideModule"
+        android:value="GlideModule" />
+
+    <application
+        android:name=".SearchHistoryDataBase.MyApp"
+        android:allowBackup="true"
+        android:configChanges="orientation|keyboardHidden|screenSize"
+        android:icon="@drawable/icon"
+        android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:roundIcon="@drawable/icon"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
+        tools:targetApi="n">
+        <activity android:name=".Activity.WelcomePage.WelcomeActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Activity.PrivacyPolicyActivity" />
+        <activity android:name=".Activity.AccountLogoutActivity" />
+        <activity android:name=".Activity.CacheActivity" />
+        <activity android:name=".Activity.ChasingDramaActivity" />
+        <activity android:name=".Activity.FavoritesActivity" />
+        <activity android:name=".Activity.WatchHistoryActivity" />
+        <activity
+            android:name=".Activity.PlayerActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait" />
+        <activity android:name=".Activity.ForgotPassword3_Activity" />
+        <activity android:name=".Activity.ForgotPassword2_Activity" />
+        <activity android:name=".Activity.ForgotPassword_Activity" />
+        <activity
+            android:name=".Activity.PersonalInformationActivity"
+            android:label="@string/title_activity_personal_information"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".Activity.MainActivity">
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Activity.SearchActivity" />
+        <activity android:name=".Activity.SearchResultActivity" />
+        <activity android:name=".Activity.EveryoneIsWatchingActivity" />
+        <activity android:name=".Activity.SetActivity" />
+        <activity android:name=".Activity.LoginActivity" />
+        <activity android:name=".Activity.RegistActivity" />
+        <activity android:name=".Activity.EditPersonalInfoActivity" />
+        <activity android:name=".Activity.EditContentActivity" />
+        <activity android:name=".Activity.SetPictureActivity" />
+        <activity android:name=".Activity.Modify_PWDActivity" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.example.simpletv.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+    </application>
+
+</manifest>

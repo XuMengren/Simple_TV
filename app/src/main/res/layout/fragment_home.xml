@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/heightFromTopOfScreen"
+        />
+    <include
+        layout="@layout/network_hint"
+        />
+ <com.scwang.smartrefresh.layout.SmartRefreshLayout
+     android:id="@+id/smart_refresh"
+     android:layout_width="match_parent"
+     android:layout_height="match_parent"
+     android:background="@color/recycler_bg"
+
+     >
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/home_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/recycler_bg"
+
+            />
+     <com.scwang.smartrefresh.layout.footer.ClassicsFooter
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         app:srlClassicsSpinnerStyle="Translate"
+         android:background="@color/recycler_bg"
+         />
+ </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+
+
+</LinearLayout>

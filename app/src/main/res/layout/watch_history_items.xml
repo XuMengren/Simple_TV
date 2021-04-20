@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="@dimen/title_margin"
+    android:id="@+id/layout_click"
+    android:layout_margin="@dimen/title_margin"
+    >
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/history_img"
+        android:layout_width="@dimen/movie_width_1"
+        android:layout_height="@dimen/movie_height_1"
+        android:scaleType="fitXY"
+        android:background="@drawable/picture_loading"
+        />
+
+    <TextView
+        android:id="@+id/history_movie_name"
+        android:layout_width="@dimen/movie_height"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:padding="@dimen/margin"
+        android:layout_margin="@dimen/title_margin"
+        android:text="@string/test_name"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:maxEms="14"
+        android:textColor="@color/black"
+        />
+
+    <TextView
+        android:id="@+id/history_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:textSize="@dimen/movie_name_size"
+        />
+</LinearLayout>

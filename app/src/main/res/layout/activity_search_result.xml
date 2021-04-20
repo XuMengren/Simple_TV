@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/recycler_bg"
+    android:orientation="vertical"
+    tools:context=".Activity.SearchResultActivity"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/heightFromTopOfScreen"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/search_height"
+        android:layout_marginBottom="@dimen/search_result_margin_bottom"
+        android:layout_margin="@dimen/title_margin"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="@dimen/search_result_img_width"
+            android:layout_height="@dimen/search_height"
+            android:background="@drawable/search" />
+
+        <TextView
+            android:id="@+id/search_name"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/test_name"
+            android:textColor="@color/black"
+            android:textSize="@dimen/search_result_txt_size" />
+
+        <TextView
+            android:id="@+id/search_result_back"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/cancel"
+            android:textColor="@color/black"
+            android:textSize="@dimen/search_result_txt_size" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/line_color"
+        />
+
+    <ProgressBar
+        android:id="@+id/progress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/title_margin"
+        />
+    <ListView
+        android:id="@+id/search_result_listview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@color/white"
+        android:layout_margin="@dimen/title_margin"
+        />
+
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:gravity="center_horizontal|center_vertical"
+       android:orientation="vertical"
+       android:id="@+id/notfind_ll"
+       android:visibility="gone"
+       >
+       <ImageView
+           android:id="@+id/notFind"
+           android:layout_width="200dp"
+           android:layout_height="200dp"
+           android:src="@mipmap/notfind"
+           />
+
+       <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="@string/notfind_movie"
+           android:padding="@dimen/title_margin"
+           />
+   </LinearLayout>
+</LinearLayout>

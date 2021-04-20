@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/net_hint"
+    android:visibility="gone"
+    android:layout_marginTop="@dimen/margin"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/hint_height"
+        android:background="@color/hint_bg"
+        android:orientation="horizontal"
+        >
+        <LinearLayout
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/hint_height"
+            android:gravity="center"
+            >
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:background="@drawable/warning"
+                android:layout_margin="@dimen/margin"
+                android:scaleType="fitXY"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_weight="0.2"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/hint_height"
+            >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/hint_height"
+                android:text="@string/network_hint"
+                android:textColor="@color/white"
+                android:padding="@dimen/hint_padding"
+                android:textSize="@dimen/hint_name_size"
+
+                />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

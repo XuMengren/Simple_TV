@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:layout_collapseParallaxMultiplier="1"
+    android:id="@+id/hint_ll"
+    >
+
+    <TextView
+        android:id="@+id/movie_hint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:text="@string/test_name"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        />
+
+    <ImageView
+        android:id="@+id/pulldown"
+        android:layout_width="@dimen/title_img_width_height"
+        android:layout_height="@dimen/title_img_width_height"
+        android:layout_marginStart="@dimen/margin"
+        android:layout_marginLeft="@dimen/margin"
+        android:layout_toEndOf="@+id/movie_hint"
+        android:layout_toRightOf="@+id/movie_hint"
+        android:background="@drawable/pulldown" />
+</RelativeLayout>

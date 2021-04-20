@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/recycler_bg"
+    android:orientation="vertical"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/heightFromTopOfScreen"
+        />
+    <include layout="@layout/mine_title" />
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:srlEnableLoadMore="false"
+        app:srlEnableOverScrollBounce="true"
+        app:srlEnableOverScrollDrag="true"
+        app:srlEnableRefresh="false">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/title_margin">
+
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:id="@+id/touxiang"
+                    android:layout_width="@dimen/mine_img_height_width"
+                    android:layout_height="@dimen/mine_img_height_width"
+                    android:layout_centerInParent="true"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/nologin"
+                    app:riv_corner_radius="100dp" />
+
+                <TextView
+                    android:id="@+id/nickname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/margin"
+                    android:text="@string/login_regist"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/mine_nickname_size" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_margin="@dimen/title_margin"
+                android:background="@drawable/shape"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <com.google.android.material.bottomnavigation.BottomNavigationView
+                    android:id="@+id/mine_nav_Function"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:elevation="0dp"
+                    app:itemBackground="@null"
+                    app:itemIconTint="@color/mine_button"
+                    app:labelVisibilityMode="labeled"
+                    app:itemTextColor="@color/mine_nav_selector"
+                    app:menu="@menu/mine" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/mine_nav_height"
+                android:layout_margin="@dimen/title_margin"
+                android:background="@drawable/shape"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/title_margin"
+                    android:text="其他"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/mine_nickname_size" />
+
+                <com.google.android.material.bottomnavigation.BottomNavigationView
+                    android:id="@+id/mine_nav_other"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:elevation="0dp"
+                    app:itemBackground="@null"
+                    app:itemIconTint="@color/mine_button"
+                    app:itemTextColor="@color/mine_nav_selector"
+                    app:labelVisibilityMode="labeled"
+                    app:menu="@menu/mine_other" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+</LinearLayout>

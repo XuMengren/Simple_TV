@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <color name="colorPrimary">#000000</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorAccent">#03DAC5</color>
+    <color name="nav_bg">#03A9F4</color>
+    <color name="nav_bg_non">#C8C6C6</color>
+    <color name="black">#000000</color>
+    <color name="movie_name">#000000</color>
+    <color name="white">#ffffff</color>
+    <color name="hint_bg">#A6F88E8E</color>
+    <color name="hint_txt">#e66054</color>
+    <color name="recycler_bg">#FAFAFA</color>
+    <color name="activity_bg">#DDDADA</color>
+    <color name="font">#FF5722</color>
+    <color name="dialog_text">#1679E4</color>
+    <color name="dialog_view">#888787</color>
+    <color name="transparent">#00FFFFFF</color>
+    <color name="red">#F39992</color>
+    <color name="blue">#59C5F6</color>
+    <color name="hot_search_hide">#B3ACAC</color>
+    <color name="line_color">#C1BEBE</color>
+    <color name="rank_one">#F44336</color>
+    <color name="rank_two">#FF5722</color>
+    <color name="rank_three">#FFC107</color>
+    <color name="click" tools:ignore="ReferenceType">@drawable/hot_shape</color>
+    <color name="tankuang">#A8A7A7</color>
+    <color name="non">#E8E5E5</color>
+    <color name="red_bg">#F44336</color>
+</resources>
