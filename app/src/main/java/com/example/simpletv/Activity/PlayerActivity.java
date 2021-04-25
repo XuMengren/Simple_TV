@@ -11,7 +11,6 @@ import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
 import android.os.Bundle;
-import android.os.Environment;
 import android.os.Message;
 import android.util.DisplayMetrics;
 import android.util.Log;
@@ -53,6 +52,8 @@ import com.example.simpletv.UsersDataBase.FavoriteDao;
 import com.example.simpletv.UsersDataBase.FavoriteVideo;
 import com.example.simpletv.UsersDataBase.WatchHistory;
 import com.example.simpletv.UsersDataBase.WatchHistoryDao;
+
+import org.jetbrains.annotations.NotNull;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -109,9 +110,9 @@ public class PlayerActivity extends AppCompatActivity implements NetWorkCallBack
         if ( !watchHistoryDao.History_Vid(vid)){
             WatchHistory watchHistory=new WatchHistory();
             //获取当前时间
-            SimpleDateFormat year = new SimpleDateFormat("yyyy");//获取年份
-            SimpleDateFormat month = new SimpleDateFormat("MM");//获取月份
-            SimpleDateFormat day=new SimpleDateFormat("dd");//获取日
+            @SuppressLint("SimpleDateFormat") SimpleDateFormat year = new SimpleDateFormat("yyyy");//获取年份
+            @SuppressLint("SimpleDateFormat") SimpleDateFormat month = new SimpleDateFormat("MM");//获取月份
+            @SuppressLint("SimpleDateFormat") SimpleDateFormat day=new SimpleDateFormat("dd");//获取日
             String years=year.format(new Date());
             String months=month.format(new Date()).substring(0,1);
             String days=day.format(new Date()).substring(0,1);
@@ -132,6 +133,20 @@ public class PlayerActivity extends AppCompatActivity implements NetWorkCallBack
             watchHistory.setHistory_video_vid(movieInfo.get(0).getV_id());
             watchHistory.setHistory_date(years+"年"+confirmMonth+"月"+confirmDays+"日");
             watchHistoryDao.InsertAll(watchHistory);
+        }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if(movieUrl_m3u8!=null){
+            movieUrl_m3u8.clear();
+            movieInfo.clear();
+            movieList_m3u8.clear();
+            movieList_other.clear();
+            movieUrl_other.clear();
+            Jzvd.releaseAllVideos();
+
         }
     }
 
@@ -158,7 +173,7 @@ public class PlayerActivity extends AppCompatActivity implements NetWorkCallBack
         *返回值(Y/N):
     */
     private void setVideo_m3u8(int i) {
-        Log.i("xydxyd", "setVideo_m3u8: "+movieInfo.get(0).getV_pic());
+//        Log.i("xydxyd", "setVideo_m3u8: "+movieInfo.get(0).getV_pic());
         mVideoPlayer.setUp(movieUrl_m3u8.get(i),"\u3000\u3000"+title+" "+movieList_m3u8.get(i));
         Glide.with(this).load(movieInfo.get(0).getV_pic()).into(mVideoPlayer.posterImageView);
         mVideoPlayer.startVideo();
@@ -220,9 +235,11 @@ public class PlayerActivity extends AppCompatActivity implements NetWorkCallBack
     public void onConfigurationChanged(@NonNull Configuration newConfig) {
         if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE) {
             setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);  //设置横屏
+//            Jzvd.FULLSCREEN_ORIENTATION = ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE;  //横向
             cancel_video.setVisibility(View.GONE);
         } else {
             setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);//设置竖屏
+//            Jzvd.NORMAL_ORIENTATION = ActivityInfo.SCREEN_ORIENTATION_SENSOR_PORTRAIT;  //纵向
             cancel_video.setVisibility(View.VISIBLE);
         }
         super.onConfigurationChanged(newConfig);
@@ -265,7 +282,7 @@ public class PlayerActivity extends AppCompatActivity implements NetWorkCallBack
         *返回值(Y/N):
     */
     @Override
-    public void URL(MovieURL.DataBean movieurl) {
+    public void URL(@NotNull MovieURL.DataBean movieurl) {
         movieUrl_m3u8=new ArrayList<>();
         movieList_m3u8=new ArrayList<>();
         movieUrl_other=new ArrayList<>();
@@ -284,7 +301,7 @@ public class PlayerActivity extends AppCompatActivity implements NetWorkCallBack
     }
 
     @Override
-    public void onClick(View v) {
+    public void onClick(@NotNull View v) {
         switch (v.getId()){
             case R.id.cancel_video:
                 finish();
@@ -458,7 +475,7 @@ public class PlayerActivity extends AppCompatActivity implements NetWorkCallBack
         *返回值(Y/N):
     */
     @Override
-    public void movieCallback(int flag, String s) {
+    public void movieCallback(int flag, @NotNull String s) {
         switch (s){
             case "m3u8":
                 setVideo_m3u8(flag);
@@ -478,7 +495,7 @@ public class PlayerActivity extends AppCompatActivity implements NetWorkCallBack
     */
     @SuppressLint("SetTextI18n")
     @Override
-    public void PopuCallBack(View callbackview,List<MovieInfo.DataBean> movieInfo) {
+    public void PopuCallBack(View callbackview, @NotNull List<MovieInfo.DataBean> movieInfo) {
         DisplayMetrics dm=new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(dm);
         View view= LayoutInflater.from(this).inflate(R.layout.detail_popu,null);
@@ -515,9 +532,9 @@ public class PlayerActivity extends AppCompatActivity implements NetWorkCallBack
 
     @Override
     public void Video_Callback(int flag, String s) {
-//        Toast.makeText(this, ""+flag+"-----"+s, Toast.LENGTH_SHORT).show();
         vid=flag;
         title=s;
         GetHttp(0,0,vid);
     }
+
 }

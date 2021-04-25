@@ -36,12 +36,16 @@ public class CacheActivity extends AppCompatActivity implements TabLayout.BaseOn
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cache);
-        setDate();
+        setData();
         initView();
         BindViewPager();
     }
-
-    private void setDate() {
+    /****
+     *  @作者：XuYunDong
+     *  @参数：Null
+     *  @描述：setData添加Fragment
+    */
+    private void setData() {
         titles.add("已完成");
         titles.add("缓存中");
 
@@ -49,13 +53,9 @@ public class CacheActivity extends AppCompatActivity implements TabLayout.BaseOn
         fragments.add(cachePageFragment);
     }
 
-    /***
-     *创建时间：2021/4/1 4:09 PM
-     *作者：xyd
-     *描述：监听系统返回键
-     *参数：
-     *返回值(Y/N):
-     */
+    /****
+    * @描述：监听系统返回键
+    */
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK) {//如果返回键按下
@@ -64,13 +64,22 @@ public class CacheActivity extends AppCompatActivity implements TabLayout.BaseOn
         }
         return super.onKeyDown(keyCode, event);
     }
+    /****
+     *  @作者：XuYunDong
+     *  @参数：Null
+     *  @描述：BindViewPager绑定ViewPager
+    */
     private void BindViewPager() {
         CacheFragmentPagerAdapter adapter=new CacheFragmentPagerAdapter(getSupportFragmentManager(),fragments,titles);
         mCacheViewpager.setAdapter(adapter);
         mCacheTablayout.setupWithViewPager(mCacheViewpager);
         mCacheTablayout.setTabMode(TabLayout.MODE_SCROLLABLE);
     }
-
+    /****
+     *  @作者：XuYunDong
+     *  @参数：Null
+     *  @描述：initView
+    */
     private void initView() {
         mExitImg = findViewById(R.id.exit_img);
         mMyTitle = findViewById(R.id.my_title);

@@ -237,7 +237,6 @@ public class EveryoneIsWatchingActivity extends AppCompatActivity implements Vie
 
     @Override
     public void movieCallback(int flag, String s) {
-//        Toast.makeText(this, "" + flag + "---" + s, Toast.LENGTH_SHORT).show();
         JumpVideo(flag,s);
     }
     /***

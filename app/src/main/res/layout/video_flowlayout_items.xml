@@ -8,6 +8,5 @@
     android:maxEms="22"
     android:padding="@dimen/margin"
     android:singleLine="true"
-    android:text="@string/test_name"
     android:textColor="@color/movie_name"
     android:textSize="@dimen/movie_name_size" />

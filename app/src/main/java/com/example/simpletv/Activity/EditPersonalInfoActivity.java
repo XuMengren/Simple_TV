@@ -45,6 +45,7 @@ import com.example.simpletv.R;
 import com.example.simpletv.SearchHistoryDataBase.MyApp;
 import com.example.simpletv.Tools.ActionSheet;
 import com.example.simpletv.Tools.StatusBarUtil;
+import com.example.simpletv.Tools.mToast;
 import com.example.simpletv.UsersDataBase.UsersDao;
 import com.example.simpletv.UsersDataBase.Users_person;
 import com.lljjcoder.Interface.OnCityItemClickListener;
@@ -123,12 +124,11 @@ public class EditPersonalInfoActivity extends AppCompatActivity implements View.
         initAdapter();
     }
 
-    /***
-     *创建时间：2021/3/15 10:12 PM
-     *作者：xyd
-     *描述：刷新数据，用于返回到该界面刷新该界面的数据
-     *参数：
-     *返回值(Y/N):
+
+    /****
+     *  @作者：XuYunDong
+     *  @参数：Null
+     *  @描述：刷新数据，用于返回到该界面刷新该界面数据
      */
     private void RefreshData() {
         SharedPreferences sharedPreferences = getSharedPreferences("LoginSuccess", Context.MODE_PRIVATE);
@@ -166,7 +166,11 @@ public class EditPersonalInfoActivity extends AppCompatActivity implements View.
         editListMap.add(map);
     }
 
-
+    /****
+     *  @作者：XuYunDong
+     *  @参数：Null
+     *  @描述：设置数据
+     */
     private void setData() {
         editList.add(getString(R.string.head));
         editList.add(getString(R.string.signature));
@@ -181,12 +185,10 @@ public class EditPersonalInfoActivity extends AppCompatActivity implements View.
         sexList.add(getString(R.string.female));
     }
 
-    /***
-     *创建时间：2021/3/15 7:22 PM
-     *作者：xyd
-     *描述：读取数据库，将数据放到集合中
-     *参数：
-     *返回值(Y/N):
+    /****
+     *  @作者：XuYunDong
+     *  @参数：Null
+     *  @描述：读取数据库，将数据放到集合中
      */
     private void readDatabase() {
         SharedPreferences sharedPreferences = getSharedPreferences("LoginSuccess", Context.MODE_PRIVATE);
@@ -228,12 +230,10 @@ public class EditPersonalInfoActivity extends AppCompatActivity implements View.
         }
     }
 
-    /***
-     *创建时间：2021/3/15 7:23 PM
-     *作者：xyd
-     *描述：设置Recyclerview的适配器
-     *参数：
-     *返回值(Y/N):
+    /****
+     *  @作者：XuYunDong
+     *  @参数：Null
+     *  @描述：设置RecyclerView的适配器
      */
     private void initAdapter() {
         editRecyAdapter = new EditRecyAdapter(editListMap, this, editList);
@@ -243,6 +243,11 @@ public class EditPersonalInfoActivity extends AppCompatActivity implements View.
         editRecyAdapter.notifyDataSetChanged();
     }
 
+    /****
+     *  @作者：XuYunDong
+     *  @参数：Null
+     *  @描述：initView
+     */
     private void initView() {
         mExitImg = findViewById(R.id.exit_img);
         mMyTitle = findViewById(R.id.my_title);
@@ -260,7 +265,9 @@ public class EditPersonalInfoActivity extends AppCompatActivity implements View.
 
     }
 
-
+    /****
+     * @描述：按钮点击事件
+     */
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
@@ -271,12 +278,10 @@ public class EditPersonalInfoActivity extends AppCompatActivity implements View.
         }
     }
 
-    /***
-     *创建时间：2021/3/15 7:23 PM
-     *作者：xyd
-     *描述：个人资料点击事件
-     *参数：
-     *返回值(Y/N):
+    /****
+     *  @作者：XuYunDong
+     *  @参数：[flag, movieName]
+     *  @描述：callback个人资料点击事件
      */
     @Override
     public void callback(int flag, String movieName) {
@@ -320,12 +325,10 @@ public class EditPersonalInfoActivity extends AppCompatActivity implements View.
         }
     }
 
-    /***
-     *创建时间：2021/3/16 4:46 PM
-     *作者：xyd
-     *描述：时间选择器
-     *参数：
-     *返回值(Y/N):
+    /****
+     *  @作者：XuYunDong
+     *  @参数：Null
+     *  @描述：时间选择器
      */
     private void TimeSelector() {
         TimePickerView pvTime = new TimePickerBuilder(EditPersonalInfoActivity.this, new OnTimeSelectListener() {
@@ -340,6 +343,11 @@ public class EditPersonalInfoActivity extends AppCompatActivity implements View.
         pvTime.show();
     }
 
+    /****
+     *  @作者：XuYunDong
+     *  @参数：[dateString]
+     *  @描述：解析时区
+     */
     public static String parseTimeZone(String dateString) {
         String FORMAT_STRING = "yyyy-MM-dd HH:mm:ss";
         String FORMAT_STRING2 = "EEE MMM dd HH:mm:ss z yyyy";
@@ -357,12 +365,10 @@ public class EditPersonalInfoActivity extends AppCompatActivity implements View.
     }
 
 
-    /***
-     *创建时间：2021/3/16 4:28 PM
-     *作者：xyd
-     *描述：获取当前账号的对象
-     *参数：
-     *返回值(Y/N):
+    /****
+     *  @作者：XuYunDong
+     *  @参数：Null
+     *  @描述：getUsersPerson获取当前用户的users_person对象
      */
     private Users_person getUsersPerson() {
         SharedPreferences sharedPreferences = getSharedPreferences("LoginSuccess", Context.MODE_PRIVATE);
@@ -370,13 +376,11 @@ public class EditPersonalInfoActivity extends AppCompatActivity implements View.
         return users_person;
     }
 
-    /***
-     *创建时间：2021/3/16 4:28 PM
-     *作者：xyd
-     *描述：地址选择器
-     *参数：
-     *返回值(Y/N):
-     */
+    /****
+     *  @作者：XuYunDong
+     *  @参数：[mPicker]
+     *  @描述：地址选择器
+    */
     private void selectCity(CityPickerView mPicker) {
         //添加默认的配置，不需要自己定义
         CityConfig cityConfig = new CityConfig.Builder().build();
@@ -400,13 +404,11 @@ public class EditPersonalInfoActivity extends AppCompatActivity implements View.
         mPicker.showCityPicker();
     }
 
-    /***
-     *创建时间：2021/3/16 4:27 PM
-     *作者：xyd
-     *描述：日期选择器
-     *参数：
-     *返回值(Y/N):
-     */
+    /****
+     *  @作者：XuYunDong
+     *  @参数：Null
+     *  @描述：日期选择器
+    */
     private void SelectSex() {
         OnOptionsSelectListener onOptionsSelectListener = new OnOptionsSelectListener() {
             @Override
@@ -444,13 +446,10 @@ public class EditPersonalInfoActivity extends AppCompatActivity implements View.
         build.setPicker(sexList);
         build.show();
     }
-    /***
-     *创建时间：2021/4/1 4:09 PM
-     *作者：xyd
-     *描述：监听系统返回键
-     *参数：
-     *返回值(Y/N):
-     */
+
+    /****
+    * @描述：监听系统返回键
+    */
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK) {//如果返回键按下
@@ -459,13 +458,12 @@ public class EditPersonalInfoActivity extends AppCompatActivity implements View.
         }
         return super.onKeyDown(keyCode, event);
     }
-    /***
-     *创建时间：2021/3/16 9:49 PM
-     *作者：xyd
-     *描述：背景墙选择列表
-     *参数：
-     *返回值(Y/N):
-     */
+
+    /****
+     *  @作者：XuYunDong
+     *  @参数：Null
+     *  @描述：背景墙选择列表
+    */
     private void showSheet_Background() {
         actionSheet = new ActionSheet.DialogBuilder(this).addSheet("查看图片", new View.OnClickListener() {
             @Override
@@ -492,13 +490,11 @@ public class EditPersonalInfoActivity extends AppCompatActivity implements View.
                 }).create();
     }
 
-    /***
-     *创建时间：2021/3/16 9:50 PM
-     *作者：xyd
-     *描述：头像选择列表
-     *参数：
-     *返回值(Y/N):
-     */
+    /****
+     *  @作者：XuYunDong
+     *  @参数：Null
+     *  @描述：头像选择列表
+    */
     private void showSheet_Head() {
         actionSheet = new ActionSheet.DialogBuilder(this).addSheet("查看头像", new View.OnClickListener() {
             @Override
@@ -530,13 +526,11 @@ public class EditPersonalInfoActivity extends AppCompatActivity implements View.
                 }).create();
     }
 
-    /***
-     *创建时间：2021/3/16 7:58 PM
-     *作者：xyd
-     *描述：打开本地相册，选取照片
-     *参数：
-     *返回值(Y/N):
-     */
+    /****
+     *  @作者：XuYunDong
+     *  @参数：Null
+     *  @描述：打开本地相册，选取照片
+    */
     private void selectPicture() {
         //intent可以应用于广播和发起意图，其中属性有：ComponentName,action,data等
         Intent intent = new Intent();
@@ -548,10 +542,12 @@ public class EditPersonalInfoActivity extends AppCompatActivity implements View.
         startActivityForResult(intent, 2);
     }
 
-    /**
-     * 检查权限并拍照。
-     * 调用相机前先检查权限。
-     */
+
+    /****
+     *  @作者：XuYunDong
+     *  @参数：Null
+     *  @描述：调用相机前先检查权限
+    */
     private void checkPermissionAndCamera() {
         int hasCameraPermission = ContextCompat.checkSelfPermission(getApplication(),
                 Manifest.permission.CAMERA);
@@ -565,9 +561,11 @@ public class EditPersonalInfoActivity extends AppCompatActivity implements View.
         }
     }
 
-    /**
-     * 调起相机拍照
-     */
+    /****
+     *  @作者：XuYunDong
+     *  @参数：Null
+     *  @描述：调用相机
+    */
     private void openCamera() {
         Intent captureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         // 判断是否有相机
@@ -605,9 +603,11 @@ public class EditPersonalInfoActivity extends AppCompatActivity implements View.
         }
     }
 
-    /**
-     * 创建图片地址uri,用于保存拍照后的照片 Android 10以后使用这种方法
-     */
+    /****
+     *  @作者：XuYunDong
+     *  @参数：Null
+     *  @描述：创建图片地址Uri，用于保存拍照后的图片Android10以后使用这种方法
+    */
     private Uri createImageUri() {
         String status = Environment.getExternalStorageState();
         // 判断是否有SD卡,优先使用SD卡存储,当没有SD卡时使用手机存储
@@ -621,6 +621,11 @@ public class EditPersonalInfoActivity extends AppCompatActivity implements View.
     /**
      * 创建保存图片的文件
      */
+    /****
+     *  @作者：XuYunDong
+     *  @参数：Null
+     *  @描述：创建保存文件的图片
+    */
     private File createImageFile() throws IOException {
         String imageName = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault()).format(new Date());
         File storageDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
@@ -683,17 +688,16 @@ public class EditPersonalInfoActivity extends AppCompatActivity implements View.
             } else {
                 //操作错误或没有选择图片
 //                Log.i("MainActivtiy", "operation error");
+                mToast.single("没有选择图片",this);
             }
         }
     }
 
-    /***
-     *创建时间：2021/3/16 8:55 PM
-     *作者：xyd
-     *描述：将String类型转换成bitmap
-     *参数：
-     *返回值(Y/N):
-     */
+    /****
+     *  @作者：XuYunDong
+     *  @参数：[st]
+     *  @描述：将String类型转换成bitmap
+    */
     public static Bitmap convertStringToIcon(String st) {
         // OutputStream out;
         Bitmap bitmap = null;
@@ -710,12 +714,11 @@ public class EditPersonalInfoActivity extends AppCompatActivity implements View.
             return null;
         }
     }
-
-    /***
-     * 将Bitmap数据类型转换成 byte[] 数组方法
-     * @param bitmap
-     * @return
-     */
+    /****
+     *  @作者：XuYunDong
+     *  @参数：[bitmap]
+     *  @描述：将bitmap类型数据转换成byte[]数组方法
+    */
     public static byte[] saveBitmap(Bitmap bitmap) {
 
         int size = bitmap.getWidth() * bitmap.getHeight() * 4;

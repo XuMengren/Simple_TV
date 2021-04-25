@@ -1,0 +1,36 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="JavaDoc" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="TOP_LEVEL_CLASS_OPTIONS">
+        <value>
+          <option name="ACCESS_JAVADOC_REQUIRED_FOR" value="none" />
+          <option name="REQUIRED_TAGS" value="" />
+        </value>
+      </option>
+      <option name="INNER_CLASS_OPTIONS">
+        <value>
+          <option name="ACCESS_JAVADOC_REQUIRED_FOR" value="none" />
+          <option name="REQUIRED_TAGS" value="" />
+        </value>
+      </option>
+      <option name="METHOD_OPTIONS">
+        <value>
+          <option name="ACCESS_JAVADOC_REQUIRED_FOR" value="none" />
+          <option name="REQUIRED_TAGS" value="@return@param@throws or @exception" />
+        </value>
+      </option>
+      <option name="FIELD_OPTIONS">
+        <value>
+          <option name="ACCESS_JAVADOC_REQUIRED_FOR" value="none" />
+          <option name="REQUIRED_TAGS" value="" />
+        </value>
+      </option>
+      <option name="IGNORE_DEPRECATED" value="false" />
+      <option name="IGNORE_JAVADOC_PERIOD" value="true" />
+      <option name="IGNORE_DUPLICATED_THROWS" value="false" />
+      <option name="IGNORE_POINT_TO_ITSELF" value="false" />
+      <option name="myAdditionalJavadocTags" value="描述：获取数据库数据,参数：Null,作者：XuYunDong,描述:,描述：监听系统返回键,描述：按钮点击事件,描述：setData,添加Fragment,描述：setData,添加Fragment,描述：setData,添加Fragment,描述：setData,添加Fragment,描述：initView,描述：BindViewPager绑定ViewPager,描述：setData添加Fragment,描述：initAdapter初始化适配器,描述：BulletFrame提示框,参数：[i,s,list],描述：获取Intent传的参数,描述：getUsersPerson获取当前用户的users_person对象,描述：刷新数据，用于返回到该界面刷新该界面数据,描述：设置数据,描述：读取数据库，将数据放到集合中,描述：设置RecyclerView的适配器,描述：打开本地相册，选取照片,描述：调用相机前先检查权限,描述：调用相机,描述：创建图片地址Uri，用于保存拍照后的图片,描述：创建图片地址Uri，用于保存拍照后的图片Android10以后使用这种方法,描述：创建保存文件的图片,描述：将String类型转换成bitmap,描述：将bitmap类型数据转换成byte[]数组方法" />
+    </inspection_tool>
+  </profile>
+</component>

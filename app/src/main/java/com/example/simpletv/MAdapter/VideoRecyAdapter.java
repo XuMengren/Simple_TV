@@ -27,11 +27,12 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.zhy.view.flowlayout.FlowLayout;
 import com.zhy.view.flowlayout.TagFlowLayout;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.Set;
 
 public class VideoRecyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> implements MovieCallBack {
 
@@ -47,6 +48,10 @@ public class VideoRecyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
     private PopuClickCallBack popuClickCallBack;
     private List<MovieBean.DataBean> movieBean;
     private MovieCallBack_Video video;
+    private int flag=1,mark=1;
+    private VideoM3u8TagAdapter adapter_m3u8;
+    private VideoOtherTagAdapter adapter_other;
+
     public void setMovieBean(List<MovieBean.DataBean> movieBean) {
         this.movieBean = movieBean;
     }
@@ -125,14 +130,13 @@ public class VideoRecyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
             for (int i = 0; i < movieUrl.getM3u8List().size(); i++) {
                 list.add(movieUrl.getM3u8List().get(i).getName());
             }
-            VideoM3u8TagAdapter adapter=new VideoM3u8TagAdapter(list);
-//            adapter.setMovieUrl(movieUrl);
-            ((Flage_Three) holder).video_playBackSource.setAdapter(adapter);
-//            adapter.notifyDataChanged();
+            adapter_m3u8 = new VideoM3u8TagAdapter(list);
+            ((Flage_Three) holder).video_playBackSource.setAdapter(adapter_m3u8);
             ((Flage_Three) holder).video_playBackSource.setOnTagClickListener(new TagFlowLayout.OnTagClickListener() {
                 @Override
                 public boolean onTagClick(View view, int position, FlowLayout parent) {
                     movieCallBack.movieCallback(position,"m3u8");
+                    adapter_other.notifyDataChanged();
                     return true;
                 }
             });
@@ -148,14 +152,16 @@ public class VideoRecyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
             for (int i = 0; i < movieUrl.getOtherList().size(); i++) {
                 list.add(movieUrl.getOtherList().get(i).getName());
             }
-            VideoOtherTagAdapter adapter=new VideoOtherTagAdapter(list);
+            adapter_other = new VideoOtherTagAdapter(list);
 //            adapter.setMovieUrl(movieUrl);
-            ((Flage_Four) holder).video_playBackSource.setAdapter(adapter);
+            ((Flage_Four) holder).video_playBackSource.setAdapter(adapter_other);
 //            adapter.notifyDataChanged();
             ((Flage_Four) holder).video_playBackSource.setOnTagClickListener(new TagFlowLayout.OnTagClickListener() {
                 @Override
                 public boolean onTagClick(View view, int position, FlowLayout parent) {
                     movieCallBack.movieCallback(position,"other");
+
+                    adapter_m3u8.notifyDataChanged();
                     return true;
                 }
             });
@@ -181,6 +187,7 @@ public class VideoRecyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
         *参数：
         *返回值(Y/N):
     */
+    @NotNull
     private String GetTheCurrentDate(){
         //获取当前时间
         SimpleDateFormat year = new SimpleDateFormat("yyyy");//获取年份
@@ -227,6 +234,7 @@ public class VideoRecyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
     public void movieCallback(int flag, String s) {
         video.Video_Callback(flag,s);
     }
+
 
 
     private class Flage_One extends RecyclerView.ViewHolder {

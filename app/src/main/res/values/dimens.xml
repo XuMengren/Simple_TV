@@ -62,7 +62,6 @@
     <dimen name="mine_img_height_width">90dp</dimen>
     <dimen name="mine_nav_height">110dp</dimen>
     <dimen name="edit_button_margin">20dp</dimen>
-
     <dimen name="design_bottom_navigation_active_text_size" tools:override="true">12sp</dimen>
     <dimen name="design_bottom_navigation_text_size" tools:override="true">12sp</dimen>
     <dimen name="heightFromTopOfScreen">25dp</dimen>

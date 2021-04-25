@@ -4,7 +4,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
 
-import com.example.simpletv.NetworkRequestInterface.JavaBean.MovieURL;
 import com.example.simpletv.R;
 import com.zhy.view.flowlayout.FlowLayout;
 import com.zhy.view.flowlayout.TagAdapter;
@@ -29,5 +28,7 @@ public class VideoOtherTagAdapter extends TagAdapter<String> {
         mHistoryTxt = view.findViewById(R.id.history_txt);
         mHistoryTxt.setText(s);
         return view;
+    }
+    public void setColor(){
     }
 }

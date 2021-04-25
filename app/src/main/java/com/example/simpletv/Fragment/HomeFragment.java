@@ -57,8 +57,6 @@ public class HomeFragment extends Fragment implements NetWorkCallBack, JsonDataC
     private NetWork_Request netWorkRequest = new NetWork_Request(this);
     private mHandler handler = new mHandler(this, this,  this);
     private ArrayList<Integer> vid = new ArrayList<>();
-    private final static String ACTION_STR="HomeFragment";
-    private final static String TAG = "HomeFragment_Ex";
     private final static String PIC_KEY = "img";
     private final static String STRING = "name";
     private final static String V_ID = "vid";
@@ -67,7 +65,6 @@ public class HomeFragment extends Fragment implements NetWorkCallBack, JsonDataC
     private SmartRefreshLayout smart_refresh;
     private ArrayList<Map<String, String>> recommendList = new ArrayList<>();
     private LinearLayout net_hint;
-    private long clicktime;
 
 
     @Nullable

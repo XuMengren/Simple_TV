@@ -33,11 +33,9 @@ public class WelcomeActivity extends AppCompatActivity {
                 Intent intent = new Intent(WelcomeActivity.this, MainActivity.class);
                 intent.setAction("welcome");
                 startActivity(intent);
-                finish();
-                overridePendingTransition(0,0);
+                overridePendingTransition(R.anim.welcome_open_anim,0);
                 return false;
             }
         }).sendEmptyMessageDelayed(0, DELAY_MILLIS); //表示延时三秒进行任务的执行
-
     }
 }

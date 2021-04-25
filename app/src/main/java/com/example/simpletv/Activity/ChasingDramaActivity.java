@@ -32,6 +32,7 @@ import com.example.simpletv.Tools.mToast;
 import com.example.simpletv.UsersDataBase.FavoriteDao;
 import com.example.simpletv.UsersDataBase.FavoriteVideo;
 
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -56,6 +57,11 @@ public class ChasingDramaActivity extends AppCompatActivity implements View.OnCl
 
     }
 
+    /****
+     *  @作者：XuYunDong
+     *  @参数：Null
+     *  @描述：initAdapter初始化适配器
+     */
     private void initAdapter() {
         if (favoriteDao.QueryAll().size() == 0) {
             text_hint.setVisibility(View.VISIBLE);
@@ -72,6 +78,11 @@ public class ChasingDramaActivity extends AppCompatActivity implements View.OnCl
 
     }
 
+    /****
+     *  @作者：XuYunDong
+     *  @参数：Null
+     *  @描述：initView
+     */
     private void initView() {
         mExitImg = findViewById(R.id.exit_img);
         mMyTitle = findViewById(R.id.my_title);
@@ -89,6 +100,11 @@ public class ChasingDramaActivity extends AppCompatActivity implements View.OnCl
         StatusBarUtil.setStatusBarFontIconDark(this, StatusBarUtil.TYPE_M);
     }
 
+    /****
+     *  @作者：XuYunDong
+     *  @参数：Null
+     *  @描述：按钮点击事件
+     */
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
@@ -116,6 +132,11 @@ public class ChasingDramaActivity extends AppCompatActivity implements View.OnCl
     }
 
     @SuppressLint("SetTextI18n")
+    /****
+     *  @作者：XuYunDong
+     *  @参数：Null
+     *  @描述：OpenPopuWindow打开弹框
+     */
     private void OpenPopuWindow() {
         View view = LayoutInflater.from(this).inflate(R.layout.chasing_popu, null);
         mSelectAll = view.findViewById(R.id.select_all);
@@ -139,10 +160,10 @@ public class ChasingDramaActivity extends AppCompatActivity implements View.OnCl
             public void onClick(View v) {
                 if (mSelectAll.isChecked()) {
                     //删除所有
-                    List<Integer>list=new ArrayList<>();
-                    BulletFrame(0,"是否删除所有追剧?",list);
-                }else if(mDelete.getText().equals("删除(0)")){
-                    mToast.single("请勾选你要删除的电影",ChasingDramaActivity.this);
+                    List<Integer> list = new ArrayList<>();
+                    BulletFrame(0, "是否删除所有追剧?", list);
+                } else if (mDelete.getText().equals("删除(0)")) {
+                    mToast.single("请勾选你要删除的电影", ChasingDramaActivity.this);
                 }
 
             }
@@ -154,25 +175,26 @@ public class ChasingDramaActivity extends AppCompatActivity implements View.OnCl
         popupWindow.showAtLocation(view, Gravity.BOTTOM, 0, 0);
     }
 
-    /***
-     *创建时间：2021/4/1 4:09 PM
-     *作者：xyd
-     *描述：监听系统返回键
-     *参数：
-     *返回值(Y/N):
+    /****
+     * @描述：监听系统返回键
      */
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK) {//如果返回键按下
-                popupWindow.dismiss();
-                finish();
-                overridePendingTransition(R.anim.zoomin_left, R.anim.zoomout_right);
+            popupWindow.dismiss();
+            finish();
+            overridePendingTransition(R.anim.zoomin_left, R.anim.zoomout_right);
         }
         return super.onKeyDown(keyCode, event);
     }
 
     @SuppressLint("SetTextI18n")
     @Override
+    /****
+     *  @作者：XuYunDong
+     *  @参数：[position, VidList]
+     *  @描述：CheckCallBack 通过vidlist集合得到要删除的追剧
+    */
     public void CheckCallBack(int position, List<Integer> VidList) {
 //        Log.i("xydxyd", "CheckCallBack: "+position+"----"+VidList);
 
@@ -182,15 +204,15 @@ public class ChasingDramaActivity extends AppCompatActivity implements View.OnCl
             @Override
             public void onClick(View v) {
 //                Toast.makeText(ChasingDramaActivity.this, ""+position, Toast.LENGTH_SHORT).show();
-                if(VidList.size()==0){
-                    mToast.single("请勾选你要删除的电影",ChasingDramaActivity.this);
-                }else{
+                if (VidList.size() == 0) {
+                    mToast.single("请勾选你要删除的追剧", ChasingDramaActivity.this);
+                } else {
                     if (mSelectAll.isChecked()) {
                         //删除所有
-                        BulletFrame(0,"是否删除所有追剧?",VidList);
+                        BulletFrame(0, "是否删除所有追剧?", VidList);
                     } else {
                         //删除选中数据
-                        BulletFrame(1,"是否删除选中的"+VidList.size()+"条数据?",VidList);
+                        BulletFrame(1, "是否删除选中的" + VidList.size() + "条数据?", VidList);
                     }
                 }
             }
@@ -213,16 +235,14 @@ public class ChasingDramaActivity extends AppCompatActivity implements View.OnCl
         overridePendingTransition(R.anim.zoomin_right, R.anim.zoomout_left);
     }
 
-    /***
-     *创建时间：2021/3/16 10:33 PM
-     *作者：xyd
-     *描述：删除追剧数据弹框
-     *参数：
-     *返回值(Y/N):
-     */
-    private void BulletFrame(int i,String s,List<Integer> list) {
+    /****
+     *  @作者：XuYunDong
+     *  @参数：[i,s,list]
+     *  @描述：BulletFrame提示框
+    */
+    private void BulletFrame(int i, String s, List<Integer> list) {
         DialogUtil dialogUtil = new DialogUtil(ChasingDramaActivity.this, this);
-        dialogUtil.dialog(s , getString(R.string.cancel), getString(R.string.confirm));
+        dialogUtil.dialog(s, getString(R.string.cancel), getString(R.string.confirm));
         dialogUtil.setOnItemClickListener(new DialogUtil.OnItemClickListener() {
             @Override
             public void onItemCancelClick() {
@@ -233,7 +253,7 @@ public class ChasingDramaActivity extends AppCompatActivity implements View.OnCl
             public void onItemConfirmClick() {
                 //确定
                 //删除所有，刷新适配器
-                switch (i){
+                switch (i) {
                     case 0:
                         favoriteDao.DeleteAll();
                         adapter.setFavoriteVideos(favoriteDao.QueryAll());

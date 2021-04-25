@@ -43,14 +43,22 @@ public class AccountLogoutActivity extends AppCompatActivity implements View.OnC
         getDatabaseData();
     }
 
+
     @SuppressLint("SetTextI18n")
+    /****
+     *  @作者：XuYunDong
+     *  @参数：Null
+     *  @描述：获取数据库数据
+     */
     private void getDatabaseData() {
         SharedPreferences sharedPreferences = getSharedPreferences("LoginSuccess", Context.MODE_PRIVATE);
         users_person = usersDao.QueryAll(sharedPreferences.getString("Username", ""));
         account.setText("-账号："+ users_person.getAccountNumber());
         mAccountNick.setText("-昵称："+ users_person.getNickname());
     }
-
+    /****
+    * @描述：监听系统返回键
+    */
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK) {//如果返回键按下
@@ -61,6 +69,11 @@ public class AccountLogoutActivity extends AppCompatActivity implements View.OnC
     }
 
     @SuppressLint({"NewApi", "UseCompatLoadingForDrawables"})
+    /****
+     *  @作者：XuYunDong
+     *  @参数：Null
+     *  @描述：initView,获取控件ID
+    */
     private void initView() {
         mExitImg = findViewById(R.id.exit_img);
         mMyTitle = findViewById(R.id.my_title);
@@ -81,7 +94,9 @@ public class AccountLogoutActivity extends AppCompatActivity implements View.OnC
         StatusBarUtil.setImmersiveStatusBar(this, false);
         StatusBarUtil.setStatusBarFontIconDark(this, StatusBarUtil.TYPE_M);
     }
-
+    /****
+    * @描述：按钮点击事件
+    */
     @Override
     public void onClick(View v) {
         switch (v.getId()) {

@@ -45,13 +45,11 @@ public class EditContentActivity extends AppCompatActivity implements View.OnCli
         initView();
         getData();
     }
-    /***
-     *创建时间：2021/3/15 7:41 PM
-     *作者：xyd
-     *描述：获取Intent传的参数
-     *参数：
-     *返回值(Y/N):
-     */
+    /****
+     *  @作者：XuYunDong
+     *  @参数：Null
+     *  @描述：获取Intent传的参数
+    */
     private void getData() {
         Intent intent = getIntent();
         String str = intent.getStringExtra("str");
@@ -73,6 +71,11 @@ public class EditContentActivity extends AppCompatActivity implements View.OnCli
         mEditContent.setText(str);
     }
 
+    /****
+     *  @作者：XuYunDong
+     *  @参数：Null
+     *  @描述：initView
+    */
     private void initView() {
         mExitImg = findViewById(R.id.exit_img);
         mMyTitle = findViewById(R.id.my_title);
@@ -89,14 +92,13 @@ public class EditContentActivity extends AppCompatActivity implements View.OnCli
         StatusBarUtil.setStatusBarFontIconDark(this, StatusBarUtil.TYPE_M);
 
     }
-    /***
-     *创建时间：2021/3/15 8:21 PM
-     *作者：xyd
-     *描述：自定义SnackBar
-     *参数：
-     *返回值(Y/N):
-     */
+
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
+    /****
+     *  @作者：XuYunDong
+     *  @参数：[title]
+     *  @描述：SnackbarPop自定义SnackBar
+    */
     private void SnackbarPop(String title) {
         Snackbar snackbar = Snackbar.make(coordinator, title, Snackbar.LENGTH_LONG)
                 .setAction(R.string.confirm, new View.OnClickListener() {
@@ -110,13 +112,10 @@ public class EditContentActivity extends AppCompatActivity implements View.OnCli
         snackbar.show();
 
     }
-    /***
-     *创建时间：2021/4/1 4:09 PM
-     *作者：xyd
-     *描述：监听系统返回键
-     *参数：
-     *返回值(Y/N):
-     */
+
+    /****
+    * @描述：监听系统返回键
+    */
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK) {//如果返回键按下
@@ -126,6 +125,9 @@ public class EditContentActivity extends AppCompatActivity implements View.OnCli
         return super.onKeyDown(keyCode, event);
     }
     @SuppressLint("NewApi")
+    /****
+    * @描述：onClick,按钮点击事件
+    */
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
@@ -168,6 +170,11 @@ public class EditContentActivity extends AppCompatActivity implements View.OnCli
                 break;
         }
     }
+    /****
+     *  @作者：XuYunDong
+     *  @参数：Null
+     *  @描述：getUsersPerson获取当前用户的users_person对象
+    */
     private Users_person getUsersPerson(){
         SharedPreferences sharedPreferences = getSharedPreferences("LoginSuccess", Context.MODE_PRIVATE);
         Users_person users_person=usersDao.getUserByName(sharedPreferences.getString("Username", ""));

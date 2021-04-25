@@ -5,6 +5,17 @@
         <item name="colorPrimary">@color/black</item>
         <item name="colorPrimaryDark">@color/black</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <!--        解决启动软件白屏问题-->
+<!--        <item name="android:windowIsTranslucent">true</item>-->
+
+    </style>
+    <style name="StartTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/black</item>
+        <item name="colorPrimaryDark">@color/black</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <!--        解决启动软件白屏问题-->
+        <item name="android:windowIsTranslucent">true</item>
 
     </style>
     <!--    给热搜设置排名样式-->
@@ -90,7 +101,7 @@
         <item name="android:windowExitAnimation">@anim/actionsheet_out</item>
     </style>
 
-        <style name="DialogTheme" parent="@android:style/Theme.Dialog">
+    <style name="DialogTheme" parent="@android:style/Theme.Dialog">
         <!-- 边框 -->
         <item name="android:windowFrame">@null</item>
         <!-- 是否浮现在activity之上 -->
@@ -113,6 +124,7 @@
         <item name="android:background">@drawable/check_boxs</item>
         <item name="android:button">@null</item><!--去掉RadioButton的那个圆形-->
     </style>
+
     <style name="take_photo_anim" parent="android:Animation">
         <item name="android:windowEnterAnimation">@anim/pop_enter_anim</item>
         <item name="android:windowExitAnimation">@anim/pop_exit_anim</item>

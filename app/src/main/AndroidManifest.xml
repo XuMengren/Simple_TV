@@ -5,16 +5,16 @@
 
     <uses-sdk tools:overrideLibrary="cn.jzvd" />
     <!-- 网络请求权限 -->
-    <uses-permission android:name="android.permission.INTERNET" /> <!-- 我们编写判断用户是否联网的代码，必须在当前module的清单文件中添加判断用户的网络状态权限 -->
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!--    访问手机相册和调用手机相机权限-->
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <meta-data
         android:name="com.bumptech.glide.integration.okhttp3.OkHttpGlideModule"
         android:value="GlideModule" />
-
     <application
         android:name=".SearchHistoryDataBase.MyApp"
         android:allowBackup="true"
@@ -27,52 +27,94 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:targetApi="n">
-        <activity android:name=".Activity.WelcomePage.WelcomeActivity">
+        <activity android:name=".Activity.WelcomePage.WelcomeActivity"
+            android:theme="@style/StartTheme"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activity.PrivacyPolicyActivity" />
-        <activity android:name=".Activity.AccountLogoutActivity" />
-        <activity android:name=".Activity.CacheActivity" />
-        <activity android:name=".Activity.ChasingDramaActivity" />
-        <activity android:name=".Activity.FavoritesActivity" />
-        <activity android:name=".Activity.WatchHistoryActivity" />
+        <activity
+            android:name=".Activity.PrivacyPolicyActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.AccountLogoutActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.CacheActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.ChasingDramaActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.FavoritesActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.WatchHistoryActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Activity.PlayerActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name=".Activity.ForgotPassword3_Activity"
             android:screenOrientation="portrait" />
-        <activity android:name=".Activity.ForgotPassword3_Activity" />
-        <activity android:name=".Activity.ForgotPassword2_Activity" />
-        <activity android:name=".Activity.ForgotPassword_Activity" />
+        <activity
+            android:name=".Activity.ForgotPassword2_Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.ForgotPassword_Activity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Activity.PersonalInformationActivity"
             android:label="@string/title_activity_personal_information"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".Activity.MainActivity">
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
-
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
+        <activity
+            android:name=".Activity.MainActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:theme="@style/StartTheme"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.SEND" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activity.SearchActivity" />
-        <activity android:name=".Activity.SearchResultActivity" />
-        <activity android:name=".Activity.EveryoneIsWatchingActivity" />
-        <activity android:name=".Activity.SetActivity" />
-        <activity android:name=".Activity.LoginActivity" />
-        <activity android:name=".Activity.RegistActivity" />
-        <activity android:name=".Activity.EditPersonalInfoActivity" />
-        <activity android:name=".Activity.EditContentActivity" />
-        <activity android:name=".Activity.SetPictureActivity" />
-        <activity android:name=".Activity.Modify_PWDActivity" />
+        <activity
+            android:name=".Activity.SearchActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.SearchResultActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.EveryoneIsWatchingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.SetActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.LoginActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.RegistActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.EditPersonalInfoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.EditContentActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.SetPictureActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activity.Modify_PWDActivity"
+            android:screenOrientation="portrait" />
 
         <provider
             android:name="androidx.core.content.FileProvider"

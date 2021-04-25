@@ -148,13 +148,11 @@ public class WatchHistoryActivity extends AppCompatActivity implements View.OnCl
                 text_hint.setVisibility(View.VISIBLE);
                 mWatchHistoryRecycler.setVisibility(View.GONE);
             }
-//            Toast.makeText(WatchHistoryActivity.this, ""+watchHistoryDao.QueryAll().get(menuBridge.getAdapterPosition()).getHistory_video_name(), Toast.LENGTH_SHORT).show();
         }
     };
 
     @Override
     public void callback(int flag, String movieName) {
-//        Toast.makeText(this, ""+flag+"---"+movieName, Toast.LENGTH_SHORT).show();
         JumpVideo(flag,movieName);
     }
     /***
